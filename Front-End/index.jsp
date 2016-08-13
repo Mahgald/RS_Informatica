@@ -76,8 +76,7 @@
 					<form action="">
 						<div class="login-signup-shoppingcart">
 					
-					<!--	<a href="Shoppingcart" class="btn btn-md btn-danger hidden-md hidden-sm hidden-xs"><span class="glyphicon glyphicon-shopping-cart"></span></a> -->
-					
+						<a href="cart.jsp" class="btn btn-md btn-danger "><span class="glyphicon glyphicon-shopping-cart"></span></a>
 							<a href="login.jsp" class="btn btn-md btn-danger "><span class="glyphicon glyphicon-log-in"></span> Login </a>
 					
 							<a href="signup.jsp" class="btn btn-md btn-danger "><span class="glyphicon glyphicon-user"></span> Signup</a>
@@ -288,35 +287,65 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-	<div class="row">
-		<div class="col-md-9">
-			
-			<%= var.memorias_ram() %>
-			
-			<%= var.motherboards() %>
-			
-			<%= var.gabinetes() %>
-			
+<br><br>
+
 	
-		</div>
-		<div class="col-md-3 ">
+	<section class="main">
+	<section class="post col-md-10 ">
+		<section class="articles_list">
+				<article class="post">	
+				<%= var.printperi(52) %>
+			</article>
+			
+			<article class="post">
+				<%= var.printperi(54) %>
+			</article>
+			<article class="post">	
+				<%= var.printperi(53) %>
+			</article>
+				
+			<article class="post">
+				<%= var.printperi(55) %>
+			</article>
+			<article class="post">	
+				<%= var.printprocesador(32) %>
+			</article>
+			
+			<article class="post">
+				<%= var.printgabo(60) %>
+			</article>
+			<article class="post">	
+				<%= var.printprocesador(29) %>
+			</article>
+				
+			<article class="post">
+				<%= var.printfuente(47) %>
+			</article>
 		
-			<a class="twitter-timeline " data-lang="es" data-height="900" data-dnt="true" data-theme="dark" data-link-color="#E81C4F" href="https://twitter.com/CarpFana/lists/rs-informatica">A Twitter List by CarpFana</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-	</div>
-</div>
+		
+			
+		</section>
+		
 	
-<br>
-<br>
-<br>
-	<footer>
+	</section>
+	
+	
+		<aside class="col-md-2  hidden-xs">
+			<div class="widget">
+		
+			<a class="twitter-timeline " data-lang="es" data-height="1050" data-dnt="true" data-theme="dark" data-link-color="#E81C4F" href="https://twitter.com/CarpFana/lists/rs-informatica">A Twitter List by CarpFana</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+		</aside>
+		
+	</section>		
+	
+	<div>
+		<br><br><br><br><br><br>
+	
+	</div>	
+	
+
+	<footer class="">
 		<div class="footer navbar-fixed-bottom">
 			<div class="container-fluid panel-footer">
 				<div class="row">

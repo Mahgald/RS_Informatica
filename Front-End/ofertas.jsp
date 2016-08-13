@@ -81,8 +81,7 @@
 					<form action="">
 						<div class="login-signup-shoppingcart">
 
-							<!--	<a href="Shoppingcart" class="btn btn-md btn-danger hidden-md hidden-sm hidden-xs"><span class="glyphicon glyphicon-shopping-cart"></span></a> -->
-
+							<a href="cart.jsp" class="btn btn-md btn-danger "><span class="glyphicon glyphicon-shopping-cart"></span></a>
 							<a href="login.jsp" class="btn btn-md btn-danger "><span
 								class="glyphicon glyphicon-log-in"></span> Login </a> <a
 								href="signup.jsp" class="btn btn-md btn-danger "><span

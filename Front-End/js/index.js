@@ -5,12 +5,14 @@ $(function(){
 	var input_rmail = document.getElementById("remail");
 
 	$("#btnsignup").click(function(){
-		if ((input_pass.value==input_rpass.value)&&(input_mail.value==input_rmail.value)) {
-			$("#registroform").submit();
-		}else{
-			$("#error").text("El E-Mail o el Password con coinciden").fadeIn("slow");	
+		
+			if ((input_pass.value==input_rpass.value)&&(input_mail.value==input_rmail.value)) {
+				$("#registroform").submit();
+			}else{
+				$("#error").text("El E-Mail o el Password con coinciden").fadeIn("slow");	
 
-		}
+			}
+		
 	});
 
 
@@ -50,7 +52,7 @@ $(function (){
 });
 
 
-$(function (){
+/*$(function (){
 	
 	$("#compra").click(function (){
 				
@@ -60,7 +62,7 @@ $(function (){
 	
 
 	
-});
+});*/
 
 
 	

@@ -33,7 +33,7 @@ public class SendEmail
     {
         protected PasswordAuthentication getPasswordAuthentication() 
         {
-               return new PasswordAuthentication("rs.mail.informatica@gmail.com","34233969");
+               return new PasswordAuthentication("miemail@gmail.com","mipasswor");
         }
     });
     
@@ -45,7 +45,7 @@ public class SendEmail
         */
 
         MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("rs.mail.informatica@gmail.com"));
+        message.setFrom(new InternetAddress("miemail@gmail.com"));
         message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
         message.setSubject(sub);
         message.setText(msg);

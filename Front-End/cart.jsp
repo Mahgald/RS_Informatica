@@ -21,13 +21,13 @@
  	
  	
  	<% 
- 	if(session.getAttribute("userLogin")!= null || session.getAttribute("adminLogin")!= null){
+//  	if(session.getAttribute("userLogin")!= null || session.getAttribute("adminLogin")!= null){
 		
- 	}else{
-		request.getRequestDispatcher("login.jsp").forward(request, response);
-	}
+//  	}else{
+// 		request.getRequestDispatcher("login.jsp").forward(request, response);
+// 	}
  	
- 		session = request.getSession(true);
+//  		session = request.getSession(true);
 	
 		
  	
@@ -97,7 +97,7 @@
 					<form action="">
 						<div class="login-signup-shoppingcart">
 					
-					<!--	<a href="Shoppingcart" class="btn btn-md btn-danger hidden-md hidden-sm hidden-xs"><span class="glyphicon glyphicon-shopping-cart"></span></a> -->
+							<a href="#" class="btn btn-md btn-danger hidden-md hidden-sm hidden-xs"><span class="glyphicon glyphicon-shopping-cart"></span></a> 
 					
 							<a href="login.jsp" class="btn btn-md btn-danger "><span class="glyphicon glyphicon-log-in"></span> Login </a>
 					
@@ -135,6 +135,7 @@
 							
 						</div>	
 					</form>
+				
 				<%}%>
 					
 				<% }}%>
@@ -298,9 +299,10 @@
 		
 			</table>
 			
+				
 		</div>
 	</div>
-	<% %>
+	
 </section>
 	
 	
@@ -375,19 +377,151 @@
 				</tr>
 		
 			</table>
+				<% if((session.getAttribute("adminLogin") == null) && (session.getAttribute("userLogin") == null)){  %>
 				
-				<a class="btn btn-danger pull-right" href="javascript:window.history.go(-1);">Seguir Comprando</a>
-				<a class="btn btn-default pull-left" id="compra" href="#">Realizar Compra</a>
-						
+					<a class="btn btn-danger pull-right" href="javascript:window.history.go(-1);">Seguir Comprando</a>
+					<a class="btn btn-default pull-left" data-toggle="modal" data-target="#formaskbuy" id="" href="#">Realizar Compra</a>
+				<%}else{%>
+				
+					<a class="btn btn-danger pull-right" href="javascript:window.history.go(-1);">Seguir Comprando</a>
+					<form action="ConLogin" method="post">
+						<input type="submit" class="btn btn-default" value="Realizar Comprar">
+					
+					</form>
+				<%}%>
 		</div>
 	</div>
 	<%} %>
 </section>
-	
-	
-	
-	
 
+	
+	<div class="container">
+
+		<!-- Modal -->
+		<div class="modal fade" id="formaskbuy" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">TIPO DE FINALIZACION DE COMPRA</h4>
+					</div>
+					<div class="modal-body ">
+
+							<div class="row">
+								<div class="form-group col-md-10 col-md-offset-1  modalparrafo" >
+									<p>Seleccione si quiere comprar de forma anonima o registrandose en nuestra web</p>
+									
+								</div>
+							</div>
+							
+							
+								<div class="modal-footer">
+									
+									<input type="button" id="" value="Anonimo" data-dismiss="modal" data-toggle="modal" data-target="#sinlogearmodal" class="btn btn-danger col-md-2  col-xs-4 ">
+									<input type="button" onclick="location.href='login.jsp';"value="Usuario" class="btn btn-default col-md-2 col-md-offset-5 col-xs-4 col-xs-offset-4 pull-right">
+									
+									
+									
+								</div>
+								
+							
+						
+							
+				</div>	
+					</div>
+
+				
+
+			</div>
+		</div>
+
+</div>	
+	
+	
+	
+<div class="container" id="">
+
+		<!-- Modal -->
+		<div class="modal fade" id="sinlogearmodal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Datos de Contacto</h4>
+					</div>
+					<div class="modal-body ">
+
+						<form action="SinLogin" method="post" class=" form-inline" role="form">
+
+							<div class="row">
+								<div class="form-group col-md-4 col-md-offset-4">
+									<label for="slnombre">Nombre</label> 
+																	
+									<input type="text" class="form-control" name="slnombre" id="nombre" placeholder="" required>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group col-md-4 col-md-offset-4">
+									<label class="" for="slapellido">Apellido</label> <input
+										class="form-control" name="slapellido" id="slapellido" type="text"
+										placeholder="" required>
+								</div>
+							</div>
+							
+													
+							<div class="row">
+								<div class="form-group col-md-4 col-md-offset-4">
+									<label class="" for="sldireccion">Direccion</label> <input
+										class="form-control" name="sldireccion" id="sldireccion" type="text"
+										placeholder="" required >
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6 col-md-offset-4 ">
+									<label class="" for="sltel">Telefono</label> 
+									<div class="form-inline">
+									
+										<div class="form-group">
+											<input class="form-control" maxlength="4" size="4" name="slcaract" id="slcaract" type="tel" placeholder="ej:11" required pattern="[1-9]{2,4}">
+										</div>
+										<div class="form-group">
+											<input class="form-control" maxlength="2" size="2" name="slquince" id="slquince" type="tel" placeholder="ej: 15" pattern="[15]{2}" >
+										</div>
+										<div class="form-group">
+											<input class="form-control" maxlength="8" size="8" name="sltel" id="sltel" type="tel" placeholder="ej: 245987" required pattern="[0-9]{6,8}">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class=" col-md-4 col-md-offset-4">
+									<label class="" for="slemail">E-Mail</label> <input
+										class="form-control" name="slemail" id="slemail" type="email"
+										placeholder="" required>
+										
+								</div>
+							</div>
+							<br>
+							<div class="modal-footer">
+								<input type="submit" value="Enviar"
+									class="btn btn-danger col-md-2 col-md-offset-5 col-xs-4 col-xs-offset-4 ">
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 
 
 
